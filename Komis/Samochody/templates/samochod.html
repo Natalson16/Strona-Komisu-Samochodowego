@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+
+{% block samochod %}
+
+    {% if samochod %}
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="col-md">
+                <div class="card text-center text-white mb-3" id="nazwa-auta">
+                    <div class="card-header">
+                        <h1 class="card-title"><i> {{ samochod.nazwa }} </i></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card card-body">
+                <div class="card text-center text-white mb-3" id="specyfikacja">
+                    <div class="card-header">
+                        <h3 class="card-title"><i> SPECYFIKACJA: </i></h3>
+                    </div>
+                </div>
+                <table class="table table-sm">
+                    <tr>
+                        <th></th>
+                        <th> MARKA: </th>
+                        <th> MODEL: </th>
+                        <th> ROK PRODUKCJI: </th>
+                        <th> CENA: </th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>{{ samochod.marka }}</th>
+                        <th>{{ samochod.model }}</th>
+                        <th>{{ samochod.rok }}</th>
+                        <th>{{ samochod.cena }} zł</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card card-body">
+                <div class="card text-center text-white mb-3" id="opis">
+                    <div class="card-header">
+                        <h3 class="card-title"><i> OPIS SAMOCHODU: </i></h3>
+                    </div>
+                </div>
+                <br>
+                <p><b> {{ samochod.opis }} </b></p>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    {% endif %}
+
+
+{% endblock %}

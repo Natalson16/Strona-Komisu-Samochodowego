@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+
+    {% block marka %}
+
+        {% if marka %}
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="col-md">
+                    <div class="card text-center text-black mb-3" id="marka-auta">
+                        <div class="card-header">
+                            <h1 class="card-title"><i> {{ marka.nazwa }} </i></h1>
+                        </div>
+                        <div class="card-text">
+                            {% for m in modele %}
+                            <hr>
+                            <h5><a class="nav-link" href = "/model/{{ m.id }}/"> {{marka.nazwa}} {{ m.nazwa }} </a></h5>
+                            <hr>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% else %}
+
+
+        {% endif %}
+
+    {% endblock %}
+
+
